@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff6ec7, #41c4f9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+}
+
+/* Ruleta */
+#wheel {
+  border-radius: 50%;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3), inset 0px 5px 10px rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+/* Indicador de puntero */
+.pointer {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 60px solid white;
+  position: absolute;
+  top: -40px;
+  left: calc(50% - 40px);
+  z-index: 10;
+}
+
+/* Botón de girar */
+#spinButton {
+  margin-top: 40px;
+  padding: 40px 120px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #ff6ec7, #41c4f9);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#spinButton:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #41c4f9, #ff6ec7);
+}
+
+/* Contenedor del resultado */
+#result-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: none;
+}
+
+#result {
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  animation: pop 1s ease-out forwards;
+}
+
+@keyframes pop {
+  0% {
+      transform: scale(0.8);
+      opacity: 0;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+/* Confeti */
+#confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+  
+  
+
+
+
